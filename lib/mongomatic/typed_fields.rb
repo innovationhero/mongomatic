@@ -25,6 +25,13 @@ module Mongomatic
         
         opts = {:cast => true}.merge(opts)
 
+        # Define a getter method for the field
+        class_eval do
+          define_method(name) do
+            @doc[name]
+          end
+        end
+
         @typed_fields ||= {}
         @typed_fields[name] = opts
       end
