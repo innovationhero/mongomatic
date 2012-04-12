@@ -30,6 +30,10 @@ module Mongomatic
           define_method(name) do
             @doc[name]
           end
+
+          define_method("#{name}=") do |val|
+            @doc[name] = val
+          end
         end
 
         @typed_fields ||= {}

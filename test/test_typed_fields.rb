@@ -6,8 +6,14 @@ class TestTypedFields < MiniTest::Unit::TestCase
     Rig.collection.drop
   end
 
-  def test_method_access_generation
+  def test_reader_method_generation
     r = Rig.new(:age => 26)
+    assert_equal r.age, 26
+  end
+
+  def test_writer_method_generation
+    r = Rig.new
+    r.age = 26
     assert_equal r.age, 26
   end
 
