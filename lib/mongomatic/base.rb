@@ -60,6 +60,11 @@ module Mongomatic
         find.limit(1).next_document
       end
 
+      # Return the last document in the collection
+      def last
+        find({}, :sort => [['$natural', -1]]).limit(1).next_document
+      end
+
       # Is the collection empty? This method is much more efficient than doing Collection.count == 0
       def empty?
         find.limit(1).has_next? == false
@@ -67,7 +72,7 @@ module Mongomatic
 
       # Return the number of documents in the collection
       def count
-        find.count
+        collection.count
       end
 
       def drop

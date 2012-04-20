@@ -2,6 +2,16 @@ require 'helper'
 require 'minitest/autorun'
 
 class TestFind < MiniTest::Unit::TestCase
+  def test_find_last
+    Person.collection.drop
+    p1 = Person.new(:name => "Person one")
+    p2 = Person.new(:name => "Person two")
+
+    p1.insert! && p2.insert!
+
+    assert_equal p2, Person.last
+  end
+
   def test_find_one_with_query
     Person.collection.drop
     p1 = Person.new(:name => "Jordan")
