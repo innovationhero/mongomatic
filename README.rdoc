@@ -2,6 +2,10 @@
 
 Mongomatic allows you to map your Ruby objects to Mongo documents. It is designed to be fast and simple.
 
+= BIG UPDATES for 2013
+
+I, Justin Smestad (@jsmestad), will be completing a new version of MongoMatic as part of my work on BrowserDeck.com
+
 === Release Notes
 
 This project follows semantic versioning as detailed here (http://semver.org). This means that minor version bumps (0.x => 0.y) can break compatibility. Please see the CHANGELOG for upgrade notes.
